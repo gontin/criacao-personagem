@@ -1,138 +1,98 @@
-# Projeto: Criador de Personagens
+# Criador de Personagens
 
-## 🧐 Descrição
-
-Este projeto é uma aplicação fullstack onde usuários podem se registrar, fazer login e criar personagens personalizados com diversos atributos como força, inteligência, cor da pele, cabelo e mais.
-
-Feito com:
-
-* React (Frontend)
-* Node.js + Express (Backend)
-* Prisma ORM + MySQL (Banco de dados)
-* Cloudinary (upload de imagens)
+Este projeto é uma aplicação fullstack para criação e personalização de personagens, com autenticação de usuários. Feito com **React**, **Node.js**, **Express**, **Prisma** e **MySQL**.
 
 ---
 
-## ✨ Como Rodar o Projeto
+## 🌟 Objetivo
 
-1. Clone o repositório:
-
-   git clone [https://github.com/seu-usuario/seu-repositorio.git](https://github.com/seu-usuario/seu-repositorio.git)
-
-2. Acesse as pastas:
-
-   * Frontend:
-
-     ```
-     cd frontend
-     npm install
-     npm run dev
-     ```
-
-   * Backend:
-
-     ```
-     cd backend
-     npm install
-     npx prisma generate
-     npx prisma migrate dev
-     npm run dev
-     ```
-
-3. Rode os dois ao mesmo tempo: **frontend e backend devem estar ativos para o projeto funcionar.**
+Permitir que usuários criem contas, façam login e personalizem seus personagens com atributos como força, inteligência, cor de pele, cabelo, etc.
 
 ---
 
-## 💾 Banco de Dados (MySQL)
+## 🚀 Como rodar o projeto
 
-* Configure a URL do banco no arquivo `.env` na pasta `backend`:
+### 1. Clone o repositório
 
-  ```
-  DATABASE_URL="mysql://usuario:senha@localhost:3306/nome_do_banco"
-  ```
+```bash
+git clone https://github.com/gontin/criacao-personagem.git
+```
 
-  > Se o MySQL estiver **sem senha**, a URL fica assim:
+### 2. Configure o banco de dados
 
-  ```
-  DATABASE_URL="mysql://root@localhost:3306/nome_do_banco"
-  ```
+* Use MySQL.
+* Crie um banco de dados.
+* Se não tiver senha, o `.env` do backend pode usar:
 
-* Rode o Prisma Studio para visualizar os dados:
+```
+DATABASE_URL="mysql://root@localhost:3306/nome_do_banco"
+```
 
-  ```
-  npx prisma studio
-  ```
+Se tiver senha:
 
----
-
-## ☁️ Cloudinary
-
-Este projeto usa o [Cloudinary](https://cloudinary.com/) para upload de imagens dos personagens.
-
-* As `API Keys` estão incluídas **temporariamente** no backend **apenas para fins de correção**.
-* Em um ambiente de produção, essas chaves devem ser protegidas com variáveis de ambiente.
+```
+DATABASE_URL="mysql://root:SENHA@localhost:3306/nome_do_banco"
+```
 
 ---
 
-## 🔐 Segurança
+### 3. Backend
 
-* As senhas dos usuários são armazenadas com hash usando `bcrypt`.
-* Apenas usuários logados podem acessar, criar, editar ou excluir personagens.
+```bash
+cd backend
+npm install
+npx prisma migrate dev
+npx prisma generate
+npx prisma studio # (opcional: abre visualizador dos dados)
+npm run dev
+```
+
+---
+
+### 4. Frontend
+
+```bash
+cd frontend
+npm install
+npm run dev
+```
+
+---
+
+### 5. Cloudinary (Upload de imagens)
+
+Este projeto usa **Cloudinary** para hospedar imagens. As credenciais estão incluídas no `.env` **apenas para fins de correção**. Em produção, recomenda-se proteger essas informações.
+
+---
+
+## 📦 Tecnologias utilizadas
+
+* React
+* Node.js
+* Express
+* Prisma ORM
+* MySQL
+* Cloudinary
+* CSS Grid/Flexbox
 
 ---
 
 ## ✅ Funcionalidades
 
-* Registro e login de usuário
-* Criação e personalização de personagens
-* Upload de imagem (via Cloudinary)
-* Edição e exclusão de personagens
-* Visualização de personagens por usuário
-* Interface moderna com efeitos visuais interativos
+* Registro e login de usuários com senha criptografada
+* Criação, edição e exclusão de personagens
+* Upload de imagem do personagem via Cloudinary
+* Interface visual e responsiva com cards
+* Detalhes dos personagens ao passar o mouse
 
 ---
 
-## 📦 Estrutura do Projeto
+## 📝 Observações
 
-```
-.
-├── backend
-│   ├── prisma
-│   ├── src
-│   └── .env
-├── frontend
-│   ├── src
-│   └── public
-```
+* As informações de personalização ficam associadas ao usuário.
+* Os atributos seguem escala fixa.
+* Interface adaptada com modais e animações suaves.
 
 ---
 
-## 🛠️ Requisitos para rodar
-
-* Node.js
-* MySQL
-* NPM
-* (Opcional) Workbench para visualizar o banco
-* Conta no Cloudinary (opcional, caso deseje mudar as keys)
-
----
-
-## 💙 Subir no GitHub
-
-1. Crie um repositório no GitHub.
-2. No terminal:
-
-```
-git init
-git add .
-git commit -m "Projeto inicial"
-git branch -M main
-git remote add origin https://github.com/seu-usuario/seu-repositorio.git
-git push -u origin main
-```
-
----
-
-## 📧 Contato
-
-Em caso de dúvidas, sugestões ou bugs, entre em contato comigo!
+Feito com 💻 e ☕ por \gontin
