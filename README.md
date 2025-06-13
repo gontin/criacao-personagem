@@ -1,78 +1,138 @@
-PROJETO FULLSTACK - CRIAÇÃO DE PERSONAGENS
+# Projeto: Criador de Personagens
 
-Este projeto foi desenvolvido com:
-- React no frontend
-- Node.js com Express no backend
-- Prisma como ORM
-- MySQL como banco de dados
-- Cloudinary para hospedagem de imagens
+## 🧐 Descrição
 
-------------------------------------------------
-PASSO A PASSO PARA RODAR O PROJETO LOCALMENTE:
-------------------------------------------------
+Este projeto é uma aplicação fullstack onde usuários podem se registrar, fazer login e criar personagens personalizados com diversos atributos como força, inteligência, cor da pele, cabelo e mais.
 
-1. Instale as dependências
+Feito com:
 
-   > node.js 18.18 ou superior necessario por conta do prisma
+* React (Frontend)
+* Node.js + Express (Backend)
+* Prisma ORM + MySQL (Banco de dados)
+* Cloudinary (upload de imagens)
 
-   No terminal, vá até a pasta do backend:
-   > cd backend
-   > npm install
+---
 
-   Em outro terminal, vá até a pasta do frontend:
-   > cd frontend
-   > npm install
+## ✨ Como Rodar o Projeto
 
-2. Configure o banco de dados
+1. Clone o repositório:
 
-   Configure o arquivo `.env` dentro da pasta `backend` com o seguinte conteúdo do mysql:
+   git clone [https://github.com/seu-usuario/seu-repositorio.git](https://github.com/seu-usuario/seu-repositorio.git)
 
-   DATABASE_URL="mysql://usuario:senha@localhost:3306/nomedobanco"
-   coloque os dados do seu bd lá
+2. Acesse as pastas:
 
-   Obs: As chaves da Cloudinary estão incluídas no repositório apenas por fins de correção.
+   * Frontend:
 
-3. Rode as migrações do Prisma no backend:
+     ```
+     cd frontend
+     npm install
+     npm run dev
+     ```
 
-   > npx prisma migrate dev
+   * Backend:
 
-   Para visualizar os dados do banco em uma interface visual, use:
-   > npx prisma studio
+     ```
+     cd backend
+     npm install
+     npx prisma generate
+     npx prisma migrate dev
+     npm run dev
+     ```
 
-4. Inicie o backend
+3. Rode os dois ao mesmo tempo: **frontend e backend devem estar ativos para o projeto funcionar.**
 
-   > npm start
+---
 
-5. Inicie o frontend (em outro terminal)
+## 💾 Banco de Dados (MySQL)
 
-   > npm start
+* Configure a URL do banco no arquivo `.env` na pasta `backend`:
 
-6. Acesse no navegador:
-   > http://localhost:3000
+  ```
+  DATABASE_URL="mysql://usuario:senha@localhost:3306/nome_do_banco"
+  ```
 
-   O backend estará ouvindo em:
-   > http://localhost:3000
+  > Se o MySQL estiver **sem senha**, a URL fica assim:
 
-------------------------------------------------
-FUNCIONALIDADES:
-------------------------------------------------
+  ```
+  DATABASE_URL="mysql://root@localhost:3306/nome_do_banco"
+  ```
 
-- Cadastro e login de usuários
-- Criação, edição e exclusão de personagens
-- Upload de imagem para Cloudinary
-- Interface responsiva com hover, modais, animações e radar chart
+* Rode o Prisma Studio para visualizar os dados:
 
-------------------------------------------------
-OBSERVAÇÕES FINAIS:
-------------------------------------------------
+  ```
+  npx prisma studio
+  ```
 
-- O projeto foi feito usando CSS puro com Flexbox e Grid.
-- É necessário rodar frontend e backend simultaneamente.
-- Se quiser testar visualmente o banco de dados, use o Prisma Studio.
- > npx prisma studio
-- A conexão com o banco precisa ser ajustada no arquivo `.env`.
+---
 
-Feito com React, Node, Express, Prisma, MySQL, Cloudinary, café e carinho :)
+## ☁️ Cloudinary
 
-Autor: https://github.com/gontin
-*nao coloquei o projeto em um repositorio do github ainda (ou talvez tenha caso demore a correção)
+Este projeto usa o [Cloudinary](https://cloudinary.com/) para upload de imagens dos personagens.
+
+* As `API Keys` estão incluídas **temporariamente** no backend **apenas para fins de correção**.
+* Em um ambiente de produção, essas chaves devem ser protegidas com variáveis de ambiente.
+
+---
+
+## 🔐 Segurança
+
+* As senhas dos usuários são armazenadas com hash usando `bcrypt`.
+* Apenas usuários logados podem acessar, criar, editar ou excluir personagens.
+
+---
+
+## ✅ Funcionalidades
+
+* Registro e login de usuário
+* Criação e personalização de personagens
+* Upload de imagem (via Cloudinary)
+* Edição e exclusão de personagens
+* Visualização de personagens por usuário
+* Interface moderna com efeitos visuais interativos
+
+---
+
+## 📦 Estrutura do Projeto
+
+```
+.
+├── backend
+│   ├── prisma
+│   ├── src
+│   └── .env
+├── frontend
+│   ├── src
+│   └── public
+```
+
+---
+
+## 🛠️ Requisitos para rodar
+
+* Node.js
+* MySQL
+* NPM
+* (Opcional) Workbench para visualizar o banco
+* Conta no Cloudinary (opcional, caso deseje mudar as keys)
+
+---
+
+## 💙 Subir no GitHub
+
+1. Crie um repositório no GitHub.
+2. No terminal:
+
+```
+git init
+git add .
+git commit -m "Projeto inicial"
+git branch -M main
+git remote add origin https://github.com/seu-usuario/seu-repositorio.git
+git push -u origin main
+```
+
+---
+
+## 📧 Contato
+
+Em caso de dúvidas, sugestões ou bugs, entre em contato comigo!
