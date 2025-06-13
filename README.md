@@ -61,7 +61,7 @@ npm run dev
 
 ### 5. Cloudinary (Upload de imagens)
 
-Este projeto usa **Cloudinary** para hospedar imagens. As credenciais estão incluídas no `.env` **apenas para fins de correção**. Em produção, recomenda-se proteger essas informações.
+Este projeto usa **Cloudinary** para hospedar imagens.
 
 ---
 
