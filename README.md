@@ -55,7 +55,16 @@ npm run dev
 
 ### 5. Cloudinary (Upload de imagens)
 
-Este projeto usa **Cloudinary** para hospedar imagens.
+
+Este projeto utiliza [Cloudinary](https://cloudinary.com/) para o upload e hospedagem de imagens.
+
+Antes de rodar o projeto, **crie um arquivo `.env` na raiz** com as seguintes variáveis de ambiente:
+
+```env
+CLOUD_NAME=seu_cloud_name_aqui
+API_KEY=sua_api_key_aqui
+API_SECRET=sua_api_secret_aqui
+```
 
 ---
 
