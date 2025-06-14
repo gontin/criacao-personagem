@@ -22,13 +22,7 @@ git clone https://github.com/gontin/criacao-personagem.git
 
 * Use MySQL.
 * Crie um banco de dados.
-* Se não tiver senha, o `.env` do backend pode usar:
-
-```
-DATABASE_URL="mysql://root@localhost:3306/nome_do_banco"
-```
-
-Se tiver senha:
+* O `.env` do backend utiliza-se:
 
 ```
 DATABASE_URL="mysql://root:SENHA@localhost:3306/nome_do_banco"
