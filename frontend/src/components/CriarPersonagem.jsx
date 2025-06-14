@@ -19,6 +19,7 @@ export default function CriarPersonagem ({onFechar, onCriado, editperso}) {
         carisma: editperso?.carisma || '',
         imagem: null
     })
+    const [isSubmitting, setIsSubmitting] = useState(false)
 
     useEffect(() => {
         if (editperso) {
@@ -40,6 +41,8 @@ export default function CriarPersonagem ({onFechar, onCriado, editperso}) {
     const handleSubmit = async e => {
 
         e.preventDefault()
+        if (isSubmitting) return
+        setIsSubmitting(true)
         const token = localStorage.getItem('token')
         const formData = new FormData()
 
@@ -67,11 +70,13 @@ export default function CriarPersonagem ({onFechar, onCriado, editperso}) {
                 })
             }
 
-            onCriado()
             onFechar()
+            onCriado()
 
         } catch (err) {
             console.error('Erro ao criar personagem', err)
+        } finally {
+            setIsSubmitting(false)
         }
     }
 
