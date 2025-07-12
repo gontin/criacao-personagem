@@ -30,7 +30,7 @@ export default function Inicio () {
 
     const deletarperso = async (id) => {
         try {
-            await axios.delete(`http://localhost:3001/api/personagens/${id}`, {
+            await axios.delete(`https://criacao-personagem.onrender.com/api/personagens/${id}`, {
                 headers: {
                     Authorization: `Bearer ${token}`
                 }
