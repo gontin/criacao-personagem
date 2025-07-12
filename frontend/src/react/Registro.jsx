@@ -20,7 +20,7 @@ export default function Register() {
         }
 
         try {
-            const resposta = await axios.post('http://localhost:3001/api/register', {
+            const resposta = await axios.post('https://criacao-personagem.onrender.com/api/register', {
                 usuario,
                 senha,
             })
