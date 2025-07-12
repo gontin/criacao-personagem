@@ -15,7 +15,7 @@ export default function Login () {
         e.preventDefault()
 
         try {
-            const resposta = await axios.post('http://localhost:3001/api/login', {
+            const resposta = await axios.post('https://criacao-personagem.onrender.com/api/login', {
                 usuario,
                 senha
             })
