@@ -17,7 +17,7 @@ export default function Inicio () {
 
     const fetchPersonagens = async () => {
         try {
-            const res = await axios.get('http://localhost:3001/api/personagens', {
+            const res = await axios.get('https://criacao-personagem.onrender.com/api/personagens', {
                 headers: { Authorization: `Bearer ${token}`}
             })
             setPersonagens(res.data)
